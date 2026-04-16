@@ -1,0 +1,212 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="main.master.cs" Inherits="main" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+     <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>On Boarding</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="plugins/iCheck/all.css">
+  <!-- Bootstrap Color Picker -->
+  <link rel="stylesheet" href="plugins/colorpicker/bootstrap-colorpicker.min.css">
+  <!-- Bootstrap time Picker -->
+  <link rel="stylesheet" href="plugins/timepicker/bootstrap-timepicker.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="plugins/select2/select2.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <style type="text/css">
+   .ajax__calendar_container { z-index : 1000 ; }
+</style>
+    <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="plugins/chartjs/Chart.js"></script>
+    
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+       <%-- <asp:ToolkitScriptManager  ID="ToolkitScriptManager1" runat="server">
+    </asp:ToolkitScriptManager>--%>
+    <div class="wrapper">
+        <!-- Main Header -->
+        <header class="main-header">
+
+    <!-- Logo -->
+    <a href="default.aspx" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>M</b>M</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>On Boarding</b></span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+       
+      </div>
+    </nav>
+  </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel" style="height:50px">
+
+       
+    <div class="pull-left info" >
+        <p>
+            <asp:Label runat="server" ID="lblLoginId"></asp:Label></p> 
+		 <%--<p>
+            <asp:Label runat="server" ID="lblName"></asp:Label></p>
+		 <p>
+            <asp:Label runat="server" ID="lblrole"></asp:Label></p>
+        <p>
+            <asp:Label runat="server" ID="lbldept"></asp:Label></p>--%>
+        <!-- Status -->
+       <a href="#"></a>
+    </div>
+        
+      </div>
+
+      <!-- search form (Optional) -->
+     <%-- <div class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </div>--%>
+      <!-- /.search form -->
+        <%--DailyReport.aspx--%>
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu">
+        <li class="header">Mumbai Metro Onboarding</li>
+    <!-- Optionally, you can add icons to the links -->
+    <li id="Lient" runat="server" visible="false" class="treeview"><a href="Onboarding.aspx"><i class="fa fa-home"></i><span>OnBoarding Entry</span></a></li>
+     <li id="Lilst" runat="server" visible="false" class="treeview"><a href="OnboardingList.aspx"><i class="fa fa-arrow-right"></i><span>Onboarding List</span></a></li>
+        <%-- if (Request.Cookies["UserDetails"]["roleid"] == "2" || Request.Cookies["UserDetails"]["roleid"] == "4" || Request.Cookies["UserDetails"]["roleid"] == "8")
+                                        { %>
+        <li id="Li9" runat="server" class="treeview"><a href="CSATDashBoard.aspx"><i class="fa fa-home"></i><span>Home</span></a></li>
+           <% } --%>
+    
+          <%--li id="nav_abc" runat="server" class="treeview"><a href="#"><i class="fa fa-train"></i><span>Master</span> <span
+        class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+        <ul class="treeview-menu">
+           <li id="nav_um" runat="server"><a href="UserMaster.aspx"><i class="fa fa-plus"></i><span>User Master</span></a></li>
+            
+        </ul>
+    </%> --%>
+
+		  <%--li id="LiCC" runat="server"><a href="CreateComplaint.aspx"><i class="fa fa-plus"></i><span>Create Correspondence</span></a></!--li>
+		  <li id="LiSC" runat="server"><a href="SearchComplaint.aspx"><i class="fa fa-search"></i><span>Search Correspondence</span></a></li>
+		  <li id="LiCB" runat="server"><a href="ComplainBucket.aspx"><i class="fa fa-eye"></i><span>View My Correspondence<br />Bucket</span></a></li>
+		  
+		    <li id="LNFC" runat="server"><a href="LostAndFound.aspx"><i class="fa fa-tags"></i><span>Create LNF</span></a></li>
+		    <li id="LNFV" runat="server"><a href="viewLostAndFound.aspx"><i class="fa fa-eye"></i><span>View LNF</span></a></li>
+		   <li id="LNFS" runat="server"><a href="searchLNF.aspx"><i class="fa fa-eye"></i><span>Search LNF</span></a></li>
+		   <li id="LNFU" runat="server"><a href="BulkAssignLNF.aspx"><i class="fa fa-eye"></i><span>Update LNF Status</span></a></li>
+
+          
+           <li id="lireport" runat="server" class="treeview"><a href="#"><i class="fa fa-file"></i><span>Reports</span> <span
+        class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+        <ul class="treeview-menu">
+           <li id="Li3" runat="server"><a href="DailyReport.aspx"><i class="fa fa-list-alt"></i><span>Date Wise Summary</span></a></li>
+            <li id="Li2" runat="server"><a href="ComplimentReport.aspx"><i class="fa fa-list-alt"></i><span>Date Wise Compliment</span></a></li>
+            <li id="Li4" runat="server"><a href="ComplaintReport.aspx"><i class="fa fa-list-alt"></i><span>Date Wise Complaint</span></a></li>
+            <li id="Li6" runat="server"><a href="CSO_Report.aspx"><i class="fa fa-list-alt"></i><span>CSO Report</span></a></li>
+            <li id="Li7" runat="server"><a href="LNF_Report.aspx"><i class="fa fa-list-alt"></i><span>LNF Report</span></a></li>
+            <li id="Li8" runat="server"><a href="ComplaintResolutionSummary.aspx"><i class="fa fa-list-alt"></i><span>Complaint Resolution Summary</span></a></li>
+        </ul>
+    </li--%>
+          <%--li id="Li5" runat="server"><a href="ChangePassword.aspx"><i class="fa fa-key"></i><span>Change Password</span></a></!--li--%>
+   
+<%--    <li id="nav_member" runat="server"><a href="abc.aspx"><i class="fa fa-unlock"></i><span>Registration form</span></a></li>--%>
+<%--    <li id="navvv_member" runat="server" ><a href="loginpage.aspx"><i class="fa fa-unlock"></i><span>Login form</span></a></li>--%>
+              <li id="navs_member" runat="server" Visible="false"><a href="Requisition.aspx"><i class="fa fa-unlock"></i><span>Requisition form</span></a></li>
+
+    <li id="navvvv_member" runat="server" Visible="false"><a href="requisitiondetails.aspx"><i class="fa fa-unlock"></i><span>Requisition List</span></a></li>
+    <li id="member" runat="server" Visible="false"><a href="feedbacklist.aspx"><i class="fa fa-unlock"></i><span>Feedback List</span></a></li>
+     <li id="nav__members" runat="server" Visible="false"><a href="adminlogin.aspx"><i class="fa fa-unlock"></i><span>Admin Login</span></a></li>
+     <li id="navv__members" runat="server" Visible="false"><a href="aprovedform.aspx"><i class="fa fa-unlock"></i><span>Approved form</span></a></li>
+
+     <li id="navv_membersss" runat="server" Visible="false"><a href="requestapproved.aspx"><i class="fa fa-unlock"></i><span>Requisition Request</span></a></li>
+<%--     <li id="navvv_membersss" runat="server" Visible="false"><a href="requestreject.aspx"><i class="fa fa-unlock"></i><span>Request Reject</span></a></li>--%>
+            <li id="navv__memberscredential" runat="server" Visible="false"><a href="Credentials.aspx"><i class="fa fa-unlock"></i><span>Credential form</span></a></li>
+  <li id="navv__memberssfinancial" runat="server" Visible="false"><a href="financialinformation.aspx"><i class="fa fa-unlock"></i><span>Financial form</span></a></li>
+  <li id="navv__membersmajor" runat="server" Visible="false"><a href="majorexperience.aspx"><i class="fa fa-unlock"></i><span>Major Experience</span></a></li>
+               <li id="navv_members" runat="server" Visible="false"><a href="adminfeedbacklist.aspx"><i class="fa fa-unlock"></i><span>Feedback List</span></a></li>
+               <li id="navav_members" runat="server" Visible="false"><a href="itemstockdetails.aspx"><i class="fa fa-unlock"></i><span>Stock List</span></a></li>
+
+     <li id="nav_members" runat="server" ><a href="loginpage.aspx?lg=L@G)UT"><i class="fa fa-unlock"></i><span>Log Out</span></a></li>
+   
+    
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <asp:ContentPlaceHolder ID="pagecontents" runat="server">
+       
+    </asp:ContentPlaceHolder>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <!-- Main Footer -->
+      
+    </div>
+    <!-- ./wrapper -->
+    <!-- REQUIRED JS SCRIPTS -->
+    <!-- jQuery 2.2.3 -->
+
+    
+    <!-- Bootstrap 3.3.6 -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/app.min.js"></script>
+        
+
+    <!-- Optionally, you can add Slimscroll and FastClick plugins.
+     Both of these plugins are recommended to enhance the
+     user experience. Slimscroll is required when using the
+     fixed layout. -->
+    </form>
+</body>
+</html>
